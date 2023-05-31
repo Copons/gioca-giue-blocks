@@ -1,0 +1,488 @@
+/*
+Theme Name: Gioca Giuè Blocks
+Theme URI: https://www.giocagiue.it/
+Author: Jacopo 'Copons' Tomasone
+Author URI: https://www.giocagiue.it/
+Description: One of the weekly iterations of the excellent blog Gioca Giuè.
+Requires at least: 5.8
+Tested up to: 5.9
+Requires PHP: 5.7
+Version: 0.1.2
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Template:
+Text Domain: gioca-giue
+Tags: blog, full-site-editing, frigging-awesome
+*/
+
+/**
+ * Theme: Custom CSS
+ */
+
+body {
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+}
+
+a {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+blockquote {
+	border-left: 5px solid var( --wp--preset--color--tertiary-light );
+	margin-left: 0;
+	padding-left: var( --wp--preset--spacing--50 );
+}
+cite {
+	color: var( --wp--preset--color--tertiary-light );
+	font-size: var( --wp--preset--font-size--small );
+}
+
+pre {
+	overflow: auto;
+	padding: var( --wp--preset--spacing--20 );
+}
+
+table, thead, tbody, th, td {
+	border-color: var( --wp--preset--color--tertiary-light );
+}
+th {
+	color: var( --wp--preset--color--tertiary-dark );
+}
+
+header.wp-block-template-part > .wp-block-group > .wp-block-group {
+	background-image:
+		url('./assets/images/cloud-1.png'),
+		url('./assets/images/duck-1.png'),
+		url('./assets/images/duck-2.png'),
+		url('./assets/images/cloud-2.png');
+	background-position:
+		top left,
+		top var( --wp--preset--spacing--60 ) left var( --wp--preset--spacing--80 ),
+		bottom right var( --wp--preset--spacing--80 ),
+		top right;
+	background-repeat: no-repeat;
+	background-size:
+		80px auto,
+		80px auto,
+		60px auto,
+		100px auto;
+}
+
+footer.wp-block-template-part::before {
+	background-image: url('./assets/images/explosion.png');
+	background-position: bottom right;
+	background-repeat: no-repeat;
+	background-size: contain;
+	content: '';
+	display: block;
+	height: 200px;
+	margin: 0 var( --wp--preset--spacing--20 );
+}
+
+.footnote-identifier-link {
+	margin-left: -4px;
+}
+.footnote-back-link {
+	font-family: var( --wp--preset--font-family--material-symbols );
+}
+
+div.sharedaddy {
+	margin-top: var( --wp--preset--spacing--50 );
+}
+div.sharedaddy .sd-block h3.sd-title {
+	font-size: var( --wp--preset--font-size--small );
+}
+
+
+/**
+ * Editor: Custom CSS
+ */
+
+.editor-post-title {
+	background: var( --wp--preset--color--primary );
+	border-bottom: 2px solid var( --wp--preset--color--foreground );
+	border-top: 2px solid var( --wp--preset--color--foreground );
+	margin-bottom: var( --wp--preset--spacing--70 );
+	padding: var( --wp--preset--spacing--30 ) var( --wp--preset--spacing--50 );
+	position: relative;
+}
+.editor-post-title::before,
+.editor-post-title::after {
+	background: var( --wp--preset--color--primary );
+	content: '';
+	display: block;
+	left: 0;
+	height: var( --wp--preset--spacing--40 );
+	position: absolute;
+	width: 100%;
+}
+.editor-post-title::before {
+	top: calc( ( var( --wp--preset--spacing--40 ) * -1 ) - 2px );
+}
+.editor-post-title::after {
+	bottom: calc( ( var( --wp--preset--spacing--40 ) * -1 ) - 2px );
+}
+
+.is-root-container {
+	padding: 0 var( --wp--preset--spacing--40 );
+}
+
+
+/**
+ * Blocks: Custom CSS
+ */
+
+/* core/site-title */
+
+.wp-block-site-title {
+	word-break: break-word;
+}
+.wp-block-site-title a {
+	-webkit-text-stroke: 2px var( --wp--preset--color--tertiary-dark );
+	transition: .2s ease-in-out all;
+}
+.wp-block-site-title a:hover {
+	-webkit-text-stroke: 2px var( --wp--preset--color--primary );
+	text-decoration: none;
+}
+
+/* core/post-title */
+
+.wp-block-post-title a {
+	transition: .2s ease-in-out all;
+}
+.wp-block-post-title a:hover {
+	-webkit-text-stroke: 2px var( --wp--preset--color--tertiary-light );
+	text-decoration: none;
+}
+
+/* core/image */
+
+figcaption,
+.wp-block-image .wp-element-caption {
+	color: var( --wp--preset--color--secondary-dark );
+	font-family: var( --wp--preset--font-family--noto-serif );
+	font-size: var( --wp--preset--font-size--small );
+}
+
+/* core/pullquote */
+.wp-block-pullquote .wp-block-pullquote__citation {
+	color: var( --wp--preset--color--tertiary-light );
+}
+
+/* core/search */
+
+.wp-block-search__inside-wrapper {
+	border: none;
+	padding: 0;
+}
+
+/* core/post-terms */
+
+.wp-block-post-terms.taxonomy-post_tag {
+	text-align: center;
+}
+
+.wp-block-post-terms.taxonomy-post_tag a {
+	background-color: var( --wp--preset--color--secondary-light );
+	color: var( --wp--preset--color--secondary-dark );
+	display: inline-block;
+	margin: 2px;
+	padding: var( --wp--preset--spacing--20 ) var( --wp--preset--spacing--30 );
+}
+.wp-block-post-terms.taxonomy-post_tag a:hover {
+	background-color: var( --wp--preset--color--primary );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
+
+.wp-block-post-terms.taxonomy-post_tag .wp-block-post-terms__separator {
+	display: none;
+}
+
+/* core/query-pagination */
+
+.wp-block-query-pagination a {
+	background-color: var( --wp--preset--color--tertiary-dark );
+	color: var( --wp--preset--color--background );
+	display: inline-block;
+	padding: var( --wp--preset--spacing--30 ) var( --wp--preset--spacing--40 );
+}
+.wp-block-query-pagination a:hover {
+	background-color: var( --wp--preset--color--tertiary-light );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
+
+/* core/post-navigation-link */
+
+.wp-block-post-navigation-link a {
+	background-color: var( --wp--preset--color--tertiary-dark );
+	color: var( --wp--preset--color--background );
+	display: inline-block;
+	padding: var( --wp--preset--spacing--30 ) var( --wp--preset--spacing--40 );
+}
+.wp-block-post-navigation-link a:hover {
+	background-color: var( --wp--preset--color--tertiary-light );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
+
+/* core/comments-pagination */
+
+.wp-block-comments-pagination a {
+	background-color: var( --wp--preset--color--tertiary-dark );
+	color: var( --wp--preset--color--background );
+	display: inline-block;
+	padding: var( --wp--preset--spacing--30 ) var( --wp--preset--spacing--40 );
+}
+.wp-block-comments-pagination a:hover {
+	background-color: var( --wp--preset--color--tertiary-light );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
+
+.wp-block-comments-pagination.is-content-justification-space-between > .wp-block-comments-pagination-next:last-of-type {
+	margin-inline-start: auto;
+}
+
+/* core/comment-reply-link */
+
+.wp-block-comment-reply-link .comment-reply-link {
+	background-color: var( --wp--preset--color--secondary-light );
+	color: var( --wp--preset--color--secondary-dark );
+	display: inline-block;
+	padding: var( --wp--preset--spacing--30 ) var( --wp--preset--spacing--40 );
+}
+.wp-block-comment-reply-link .comment-reply-link:hover {
+	background-color: var( --wp--preset--color--tertiary-light );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
+
+/* core/post-comment-form */
+
+.wp-block-post-comments-form .form-submit input[type="submit"] {
+	font-size: var( --wp--preset--font-size--medium );
+}
+.wp-block-post-comments-form .form-submit input[type="submit"]:hover,
+.wp-block-post-comments-form .form-submit input[type="submit"]:focus {
+	background-color: var( --wp--preset--color--tertiary-light );
+	color: var( --wp--preset--color--background );
+}
+
+.wp-block-post-comments-form .required {
+	color: var( --wp--preset--color--danger );
+}
+
+/* core/latest-comments */
+
+.wp-block-latest-comments {
+	color: var( --wp--preset--color--background );
+	padding: 0;
+}
+
+.wp-block-latest-comments a {
+	color: var( --wp--preset--color--secondary-light );
+	font-weight: 700;
+}
+
+.wp-block-latest-comments .avatar,
+.wp-block-latest-comments__comment-avatar {
+	margin-top: 6px;
+}
+
+/* core/social-link */
+
+.wp-social-link.wp-social-link-chain.wp-social-link-steam {
+	background-color: var( --wp--preset--color--foreground );
+	color: var( --wp--preset--color--background );
+}
+.wp-social-link-steam svg {
+	display: none;
+}
+.wp-social-link-steam a {
+	height: 24px;
+}
+.wp-social-link-steam a::before {
+	background-image: url('./assets/images/steam-logo.png');
+	background-size: contain;
+	content: '';
+	height: 24px;
+	width: 24px;
+}
+
+/* gioca-giue/post-authors */
+
+.wp-block-gioca-giue-post-authors a,
+.wp-block-gioca-giue-post-authors a:hover {
+	color: var( --wp--preset--color--foreground );
+}
+
+
+/**
+ * Material Symbols
+ */
+
+.wp-block-gioca-giue-post-authors::before,
+.wp-block-post-date::before,
+.wp-block-post-comments-link::before,
+.wp-block-post-terms.taxonomy-category::before,
+.wp-block-query-pagination-previous::before,
+.wp-block-query-pagination-next::after,
+.post-navigation-link-previous a::before,
+.post-navigation-link-next a::after,
+.wp-block-comments-pagination-previous::before,
+.wp-block-comments-pagination-next::after,
+.wp-block-comment-reply-link .comment-reply-link::before {
+	font-family: var( --wp--preset--font-family--material-symbols );
+	font-style: normal;
+	font-weight: 700;
+	margin-right: 4px;
+	opacity: 0.5;
+	vertical-align: bottom;
+}
+
+.wp-block-gioca-giue-post-authors::before {
+	content: 'videogame_asset';
+	margin-right: 0;
+}
+.wp-block-post-date::before {
+	content: 'calendar_month';
+}
+.wp-block-post-comments-link::before {
+	content: 'gavel';
+}
+.wp-block-post-terms.taxonomy-category::before {
+	content: 'sell';
+}
+.wp-block-query-pagination-previous::before,
+.post-navigation-link-previous a::before,
+.wp-block-comments-pagination-previous::before {
+	content: 'arrow_back';
+	opacity: 1;
+}
+.wp-block-query-pagination-next::after,
+.post-navigation-link-next a::after,
+.wp-block-comments-pagination-next::after {
+	content: 'arrow_forward';
+	margin-left: 4px;
+	margin-right: 0;
+	opacity: 1;
+}
+.wp-block-comment-reply-link .comment-reply-link::before {
+	content: 'gavel';
+	opacity: 1;
+}
+
+/**
+ * Overlay
+ */
+
+.gioca-giue-overlay-toggle {
+	background-color: var( --wp--preset--color--secondary-dark );
+	content: 'menu';
+	cursor: pointer;
+	display: block;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition-duration: .15s;
+	transition-property: background-color, top;
+	transition-timing-function: linear;
+	z-index: 6;
+}
+.gioca-giue-overlay-toggle:hover {
+	background-color: var( --wp--preset--color--tertiary-light );
+}
+.admin-bar .gioca-giue-overlay-toggle {
+	top: 32px
+}
+@media screen and (max-width: 782px) {
+	.admin-bar .gioca-giue-overlay-toggle {
+		top: 46px;
+	}
+}
+body.is-overlay-active .gioca-giue-overlay-toggle {
+	position: absolute;
+	top: 0;
+}
+aside.gioca-giue-overlay.is-stuck-to-top .gioca-giue-overlay-toggle {
+	top: 0 !important;
+}
+
+.gioca-giue-overlay-close {
+	display: none;
+}
+body.is-overlay-active .gioca-giue-overlay-close {
+	display: block;
+}
+body.is-overlay-active .gioca-giue-overlay-open {
+	display: none;
+}
+
+body.is-overlay-active {
+	overflow: hidden;
+}
+aside.gioca-giue-overlay {
+	bottom: 0;
+	left: 200vw;
+	overflow: auto;
+	position: fixed;
+	right: 0;
+	top: 0;
+	transition: .15s linear left;
+	margin: 0;
+	max-width: 100%;
+	z-index: 5;
+}
+body.is-overlay-active aside.gioca-giue-overlay {
+	left: 0;
+}
+aside.gioca-giue-overlay > .wp-block-group {
+	min-height: 100%;
+}
+.admin-bar aside.gioca-giue-overlay {
+	top: 32px
+}
+@media screen and (max-width: 782px) {
+	.admin-bar aside.gioca-giue-overlay {
+		top: 46px;
+	}
+}
+aside.gioca-giue-overlay.is-stuck-to-top {
+	top: 0 !important;
+}
+
+aside.gioca-giue-overlay .wp-block-gioca-giue-authors,
+aside.gioca-giue-overlay .wp-block-categories-list,
+aside.gioca-giue-overlay .wp-block-categories
+ {
+	list-style-type: none;
+	padding: 0;
+}
+aside.gioca-giue-overlay .wp-block-gioca-giue-authors li,
+aside.gioca-giue-overlay .wp-block-categories-list li,
+aside.gioca-giue-overlay .wp-block-categories li {
+	display: inline-block;
+}
+aside.gioca-giue-overlay .wp-block-gioca-giue-authors a,
+aside.gioca-giue-overlay .wp-block-categories-list a,
+aside.gioca-giue-overlay .wp-block-categories a {
+	background-color: var( --wp--preset--color--secondary-light );
+	color: var( --wp--preset--color--secondary-dark );
+	display: inline-block;
+	margin: 2px 0;
+	padding: var( --wp--preset--spacing--20 ) var( --wp--preset--spacing--30 );
+}
+aside.gioca-giue-overlay .wp-block-gioca-giue-authors a:hover,
+aside.gioca-giue-overlay .wp-block-categories-list a:hover,
+aside.gioca-giue-overlay .wp-block-categories a:hover {
+	background-color: var( --wp--preset--color--primary );
+	color: var( --wp--preset--color--background );
+	text-decoration: none;
+}
